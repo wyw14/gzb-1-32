@@ -1,0 +1,32 @@
+[
+  {
+    "id": "mpz5qmdor67s2wgk4nk",
+    "name": "??",
+    "species": "??",
+    "difficulty": "easy",
+    "lightPreference": "medium",
+    "humidityPreference": "medium",
+    "wateringCycle": 7,
+    "fertilizingCycle": 30,
+    "notes": "?????",
+    "createdAt": "2026-06-04T07:12:04.812Z",
+    "lastWatering": "2026-06-04T07:12:04.812Z",
+    "lastFertilizing": "2026-06-04T07:12:04.812Z",
+    "status": "healthy"
+  },
+  {
+    "id": "mpz7eygmyvpbpc7m9v",
+    "name": "爽打",
+    "species": "Aloe vera",
+    "difficulty": "easy",
+    "lightPreference": "full",
+    "humidityPreference": "low",
+    "wateringCycle": 14,
+    "fertilizingCycle": 60,
+    "lastWatering": "2026-06-04T00:00:00.000Z",
+    "lastFertilizing": "2026-06-04T00:00:00.000Z",
+    "notes": "打算",
+    "createdAt": "2026-06-04T07:58:59.830Z",
+    "status": "healthy"
+  }
+]

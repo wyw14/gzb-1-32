@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌱 家庭绿植养护智能管家</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/element-plus/2.4.4/index.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="loading" style="display: flex; align-items: center; justify-content: center; height: 100vh; font-size: 18px; color: #2e7d32;">
+      <div style="text-align: center;">
+        <div style="font-size: 48px; margin-bottom: 16px;">🌱</div>
+        <div>正在加载中...</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    window.loadError = false;
+    window.addEventListener('error', function(e) {
+      console.error('Script load error:', e.error || e.message);
+      window.loadError = true;
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.0/vue.global.prod.min.js"></script>
+  <script>
+    if (typeof Vue === 'undefined') {
+      document.write('<script src="https://unpkg.com/vue@3.4.0/dist/vue.global.prod.js"><\/script>');
+    }
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/element-plus/2.4.4/index.full.min.js"></script>
+  <script>
+    if (typeof ElementPlus === 'undefined') {
+      document.write('<script src="https://unpkg.com/element-plus@2.4.4/dist/index.full.js"><\/script>');
+    }
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/element-plus/2.4.4/locale/zh-cn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/element-plus-icons-vue/2.3.1/index.iife.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  
+  <script>
+    function checkDependencies() {
+      if (typeof Vue !== 'undefined' && 
+          typeof ElementPlus !== 'undefined' && 
+          typeof Chart !== 'undefined') {
+        var loading = document.getElementById('loading');
+        if (loading) loading.style.display = 'none';
+        var script = document.createElement('script');
+        script.src = '/app.js';
+        document.body.appendChild(script);
+      } else if (window.loadError) {
+        var loading = document.getElementById('loading');
+        if (loading) {
+          loading.innerHTML = '<div style="text-align: center; color: #f44336;"><div style="font-size: 48px; margin-bottom: 16px;">❌</div><div>资源加载失败，请检查网络连接后刷新页面</div></div>';
+        }
+      } else {
+        setTimeout(checkDependencies, 100);
+      }
+    }
+    checkDependencies();
+  </script>
+</body>
+</html>
