@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "check:data": "node scripts/check-data.js",
+    "verify": "node scripts/verify-service.js",
+    "release:check": "node scripts/release-check.js"
   },
   "dependencies": {
     "express": "^4.18.2",
